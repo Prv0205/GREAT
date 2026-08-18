@@ -118,8 +118,8 @@ export const teachers: Teacher[] = [
 ]
 
 export const navLinks = [
-  { href: '/GREAT/', label: 'Home' },
-  { href: '/GREAT/courses', label: 'Subjects' },
-  { href: '/GREAT/about', label: 'Tutors' },
-  { href: '/GREAT/enroll', label: 'Enroll' },
+  { href: '/', label: 'Home' },
+  { href: '/courses', label: 'Subjects' },
+  { href: '/about', label: 'Tutors' },
+  { href: '/enroll', label: 'Enroll' },
 ]
