@@ -26,7 +26,7 @@ export default function HomePage() {
       <section className="relative min-h-[72vh] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/hero.png"
+            src="/GREAT/hero.png"
             alt="GREAT students learning in a bright, imaginative classroom"
             fill
             priority
