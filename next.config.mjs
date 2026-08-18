@@ -2,7 +2,6 @@
 const nextConfig = {
   output: 'export',
   basePath: '/GREAT',
-  assetPrefix: '/GREAT/',
   trailingSlash: true,
 
   typescript: {
