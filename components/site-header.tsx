@@ -1,9 +1,11 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/lib/site-data'
 import { Button } from '@/components/ui/button'
@@ -13,87 +15,148 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-xl">
-      <div className="irish-tricolour absolute inset-x-0 top-0 h-1" aria-hidden="true" />
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary font-display text-lg font-extrabold text-primary-foreground glow-primary">
-            G
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-lg font-bold tracking-tight">GREAT</span>
-            <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
-              Galway Tuition
-            </span>
-          </span>
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-xl">
+
+      {/* Irish tricolour */}
+      <div
+        className="absolute inset-x-0 top-0 flex h-1"
+        aria-hidden="true"
+      >
+        <div className="w-1/3 bg-[#169B62]" />
+        <div className="w-1/3 bg-white" />
+        <div className="w-1/3 bg-[#FF883E]" />
+      </div>
+
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+
+        {/* =====================================================
+            LOGO
+            ===================================================== */}
+
+        <Link
+          href="/"
+          className="flex items-center"
+          onClick={() => setOpen(false)}
+          aria-label="GREAT Galway Tuition home"
+        >
+          <Image
+            src="/logo.png"
+            alt="GREAT Galway Regional Education and Tutorial Center"
+            width={110}
+            height={70}
+            priority
+            className="h-[62px] w-auto object-contain sm:h-[68px]"
+          />
         </Link>
+
+        {/* =====================================================
+            DESKTOP NAVIGATION
+            ===================================================== */}
 
         <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => {
             const active =
-              link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+              link.href === '/'
+                ? pathname === '/'
+                : pathname.startsWith(link.href)
+
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'rounded-md px-4 py-2 text-sm font-medium transition-colors',
+                  'relative rounded-md px-4 py-2 text-sm font-semibold transition-colors',
                   active
-                    ? 'text-foreground'
-                    : 'text-muted-foreground hover:text-foreground',
+                    ? 'text-[#169B62]'
+                    : 'text-muted-foreground hover:text-[#169B62]',
                 )}
               >
                 {link.label}
+
+                {/* Active indicator */}
+                {active && (
+                  <span className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-[#FF883E]" />
+                )}
               </Link>
             )
           })}
         </nav>
 
+        {/* =====================================================
+            REGISTER BUTTON
+            ===================================================== */}
+
         <div className="hidden md:block">
-          <Button render={<Link href="/enroll" />} className="glow-primary">
+          <Button
+            render={<Link href="/enroll" />}
+            className="bg-[#169B62] text-white shadow-md transition-colors hover:bg-[#117C4E]"
+          >
             Register Interest
           </Button>
         </div>
 
+        {/* =====================================================
+            MOBILE MENU BUTTON
+            ===================================================== */}
+
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground md:hidden"
-          onClick={() => setOpen((v) => !v)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground transition-colors hover:bg-secondary md:hidden"
+          onClick={() => setOpen((value) => !value)}
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
+      {/* =====================================================
+          MOBILE NAVIGATION
+          ===================================================== */}
+
       {open && (
-        <nav className="border-t border-border/60 bg-background/95 px-4 py-4 md:hidden">
+        <nav className="border-t border-border/60 bg-background/98 px-4 py-4 shadow-lg md:hidden">
           <div className="flex flex-col gap-1">
+
             {navLinks.map((link) => {
               const active =
-                link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+                link.href === '/'
+                  ? pathname === '/'
+                  : pathname.startsWith(link.href)
+
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    'rounded-md px-4 py-3 text-sm font-medium transition-colors',
+                    'rounded-lg px-4 py-3 text-sm font-semibold transition-colors',
                     active
-                      ? 'bg-secondary text-foreground'
-                      : 'text-muted-foreground hover:bg-secondary/60 hover:text-foreground',
+                      ? 'bg-[#E8F5EF] text-[#169B62]'
+                      : 'text-muted-foreground hover:bg-secondary hover:text-[#169B62]',
                   )}
                 >
                   {link.label}
                 </Link>
               )
             })}
+
             <Button
-              render={<Link href="/enroll" onClick={() => setOpen(false)} />}
-              className="mt-2"
+              render={
+                <Link
+                  href="/enroll"
+                  onClick={() => setOpen(false)}
+                />
+              }
+              className="mt-3 w-full bg-[#169B62] text-white hover:bg-[#117C4E]"
             >
               Register Interest
             </Button>
+
           </div>
         </nav>
       )}
