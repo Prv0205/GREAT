@@ -40,7 +40,7 @@ export function SiteHeader() {
           aria-label="GREAT Galway Tuition home"
         >
           <Image
-            src="/logo.jpg"
+            src="/GREAT/logo.jpg"
             alt="GREAT Galway Regional Education and Tutorial Center"
             width={110}
             height={70}
