@@ -7,6 +7,7 @@
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -15,29 +16,39 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
+
   --color-muted-foreground: var(--muted-foreground);
   --color-muted: var(--muted);
+
   --color-secondary-foreground: var(--secondary-foreground);
   --color-secondary: var(--secondary);
+
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
+
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -47,69 +58,549 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* =========================================================
+   ROOT / IRISH FLAG COLOURS
+   ========================================================= */
+
 :root {
   color-scheme: light;
-  --background: oklch(0.985 0.008 145);
-  --foreground: oklch(0.20 0.04 155);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.20 0.04 155);
-  --popover: oklch(0.98 0.015 145);
-  --popover-foreground: oklch(0.20 0.04 155);
-  --primary: oklch(0.52 0.16 155);
-  --primary-foreground: oklch(0.99 0.01 145);
-  --secondary: oklch(0.94 0.035 145);
-  --secondary-foreground: oklch(0.24 0.05 155);
-  --muted: oklch(0.94 0.025 145);
-  --muted-foreground: oklch(0.46 0.035 155);
-  --accent: oklch(0.70 0.19 58);
-  --accent-foreground: oklch(0.20 0.04 155);
-  --destructive: oklch(0.62 0.24 25);
-  --border: oklch(0.88 0.025 145);
-  --input: oklch(0.9 0.02 145);
-  --ring: oklch(0.52 0.16 155);
-  --chart-1: oklch(0.52 0.16 155);
-  --chart-2: oklch(0.70 0.19 58);
-  --chart-3: oklch(0.62 0.12 145);
-  --chart-4: oklch(0.76 0.14 125);
-  --chart-5: oklch(0.72 0.04 145);
+
+  /* Irish Flag */
+  --irish-green: #169b62;
+  --irish-white: #ffffff;
+  --irish-orange: #ff883e;
+
+  /* Main colours */
+  --background: #f8fcfa;
+  --foreground: #173b2b;
+
+  --card: #ffffff;
+  --card-foreground: #173b2b;
+
+  --popover: #ffffff;
+  --popover-foreground: #173b2b;
+
+  /* Green = Primary */
+  --primary: #169b62;
+  --primary-foreground: #ffffff;
+
+  /* Soft Green = Secondary */
+  --secondary: #e8f5ef;
+  --secondary-foreground: #145c3b;
+
+  --muted: #eef7f2;
+  --muted-foreground: #557267;
+
+  /* Orange = Accent */
+  --accent: #ff883e;
+  --accent-foreground: #ffffff;
+
+  --destructive: #dc3545;
+
+  --border: #d7e9df;
+  --input: #d7e9df;
+
+  --ring: #169b62;
+
+  /* Charts */
+  --chart-1: #169b62;
+  --chart-2: #ff883e;
+  --chart-3: #ffffff;
+  --chart-4: #0f7a4b;
+  --chart-5: #e66f25;
+
   --radius: 0.75rem;
-  --sidebar: oklch(0.98 0.015 145);
-  --sidebar-foreground: oklch(0.20 0.04 155);
-  --sidebar-primary: oklch(0.52 0.16 155);
-  --sidebar-primary-foreground: oklch(0.99 0.01 145);
-  --sidebar-accent: oklch(0.94 0.035 145);
-  --sidebar-accent-foreground: oklch(0.24 0.05 155);
-  --sidebar-border: oklch(0.88 0.025 145);
-  --sidebar-ring: oklch(0.52 0.16 155);
+
+  /* Sidebar */
+  --sidebar: #f3faf6;
+  --sidebar-foreground: #173b2b;
+  --sidebar-primary: #169b62;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff1e8;
+  --sidebar-accent-foreground: #8a461f;
+  --sidebar-border: #d7e9df;
+  --sidebar-ring: #169b62;
 }
+
+/* =========================================================
+   BASE
+   ========================================================= */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
   }
 }
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
 
 @layer utilities {
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  /* Green glow */
   .glow-primary {
-    box-shadow: 0 10px 30px -12px oklch(0.52 0.16 155 / 0.45);
+    box-shadow:
+      0 10px 30px -12px rgba(22, 155, 98, 0.45);
   }
+
+  /* =======================================================
+     IRISH TRICOLOUR
+     ======================================================= */
 
   .irish-tricolour {
     background: linear-gradient(
       90deg,
-      #169b62 0 33.33%,
-      #ffffff 33.33% 66.66%,
-      #ff883e 66.66% 100%
+      #169b62 0%,
+      #169b62 33.33%,
+      #ffffff 33.33%,
+      #ffffff 66.66%,
+      #ff883e 66.66%,
+      #ff883e 100%
     );
+  }
+
+  .irish-accent {
+    background: linear-gradient(
+      90deg,
+      #169b62 0%,
+      #169b62 33.33%,
+      #ffffff 33.33%,
+      #ffffff 66.66%,
+      #ff883e 66.66%,
+      #ff883e 100%
+    );
+  }
+
+  .irish-border {
+    border-top: 4px solid #169b62;
+    border-bottom: 4px solid #ff883e;
+  }
+
+  /* =======================================================
+     IRISH COLOUR HELPERS
+     ======================================================= */
+
+  .irish-green {
+    color: #169b62;
+  }
+
+  .irish-orange {
+    color: #ff883e;
+  }
+
+  .irish-white {
+    color: #ffffff;
+  }
+
+  .bg-irish-green {
+    background-color: #169b62;
+  }
+
+  .bg-irish-orange {
+    background-color: #ff883e;
+  }
+
+  .bg-irish-white {
+    background-color: #ffffff;
+  }
+
+  .border-irish-green {
+    border-color: #169b62;
+  }
+
+  .border-irish-orange {
+    border-color: #ff883e;
+  }
+}
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.section-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+}
+
+.section-heading span {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: #169b62;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #173b2b;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.section-heading p {
+  margin-top: 0.75rem;
+  color: #557267;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   EXPLORE OUR SUBJECTS
+   ========================================================= */
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Individual subject card */
+
+.subject-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 2px solid #d7e9df;
+  border-radius: 1rem;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.subject-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #169b62;
+
+  box-shadow:
+    0 14px 35px rgba(22, 155, 98, 0.14);
+}
+
+/* Subject image */
+
+.subject-card img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  object-fit: cover;
+}
+
+/* Subject content */
+
+.subject-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 1.25rem;
+}
+
+.subject-card-content h3 {
+  margin: 0 0 0.5rem;
+
+  color: #169b62;
+
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.subject-card-content p {
+  flex: 1;
+
+  margin: 0;
+
+  color: #557267;
+
+  line-height: 1.65;
+}
+
+/* Subject accent */
+
+.subject-card::after {
+  content: '';
+
+  display: block;
+
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #169b62 0%,
+    #169b62 33.33%,
+    #ffffff 33.33%,
+    #ffffff 66.66%,
+    #ff883e 66.66%,
+    #ff883e 100%
+  );
+}
+
+/* =========================================================
+   MEET OUR TEACHERS
+   ========================================================= */
+
+.tutors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Individual tutor card */
+
+.tutor-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 2px solid #ff883e;
+  border-radius: 1rem;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.tutor-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #169b62;
+
+  box-shadow:
+    0 14px 35px rgba(22, 155, 98, 0.14);
+}
+
+/* Tutor image */
+
+.tutor-card img {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+}
+
+/* Tutor content */
+
+.tutor-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding: 1.25rem;
+}
+
+.tutor-card-content h3 {
+  margin: 0 0 0.35rem;
+
+  color: #169b62;
+
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.tutor-card-content p {
+  margin: 0;
+
+  color: #557267;
+
+  line-height: 1.6;
+}
+
+/* Tutor accent */
+
+.tutor-card::after {
+  content: '';
+
+  display: block;
+
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #169b62 0%,
+    #169b62 33.33%,
+    #ffffff 33.33%,
+    #ffffff 66.66%,
+    #ff883e 66.66%,
+    #ff883e 100%
+  );
+}
+
+/* =========================================================
+   GENERAL CARDS
+   ========================================================= */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d7e9df;
+  border-radius: 1rem;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.irish-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.75rem 1.25rem;
+
+  border: none;
+  border-radius: 0.75rem;
+
+  background: #169b62;
+  color: #ffffff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.irish-button:hover {
+  background: #117c4e;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(22, 155, 98, 0.25);
+}
+
+.irish-button-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.75rem 1.25rem;
+
+  border: none;
+  border-radius: 0.75rem;
+
+  background: #ff883e;
+  color: #ffffff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.irish-button-orange:hover {
+  background: #e96f25;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(255, 136, 62, 0.25);
+}
+
+/* =========================================================
+   DECORATIVE IRISH FLAG LINE
+   ========================================================= */
+
+.irish-flag-line {
+  width: 100%;
+  height: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #169b62 0%,
+    #169b62 33.33%,
+    #ffffff 33.33%,
+    #ffffff 66.66%,
+    #ff883e 66.66%,
+    #ff883e 100%
+  );
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .subjects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tutors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .subjects-grid,
+  .tutors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    margin-bottom: 2rem;
+  }
+
+  .subject-card-content,
+  .tutor-card-content {
+    padding: 1rem;
   }
 }
