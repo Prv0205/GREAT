@@ -27,7 +27,7 @@ export function SiteHeader() {
         <div className="w-1/3 bg-[#FF883E]" />
       </div>
 
-      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[96px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
 
         {/* =====================================================
             LOGO
@@ -42,10 +42,10 @@ export function SiteHeader() {
           <Image
             src="/GREAT/logo.jpg"
             alt="GREAT Galway Regional Education and Tutorial Center"
-            width={110}
-            height={70}
+            width={160}
+            height={100}
             priority
-            className="h-[62px] w-auto object-contain sm:h-[68px]"
+            className="h-[82px] w-auto object-contain sm:h-[90px]"
           />
         </Link>
 
