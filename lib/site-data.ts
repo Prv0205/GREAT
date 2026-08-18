@@ -14,7 +14,7 @@ export const subjects: Subject[] = [
   {
     slug: 'maths',
     title: 'Maths',
-    poster: '/posters/maths.png',
+    poster: '/GREAT/posters/maths.png',
     tagline: 'Build confidence with numbers',
     level: 'Junior & Leaving Cert',
     rating: 'H1–H3 support',
@@ -26,7 +26,7 @@ export const subjects: Subject[] = [
   {
     slug: 'english',
     title: 'English',
-    poster: '/posters/english.png',
+    poster: '/GREAT/posters/english.png',
     tagline: 'Read, write & express ideas',
     level: 'Junior & Leaving Cert',
     rating: 'H1–H3 support',
@@ -38,7 +38,7 @@ export const subjects: Subject[] = [
   {
     slug: 'science',
     title: 'Science',
-    poster: '/posters/science.png',
+    poster: '/GREAT/posters/science.png',
     tagline: 'Discover how the world works',
     level: 'Junior & Leaving Cert',
     rating: 'H1–H3 support',
@@ -50,7 +50,7 @@ export const subjects: Subject[] = [
   {
     slug: 'irish',
     title: 'Irish',
-    poster: '/posters/irish.png',
+    poster: '/GREAT/posters/irish.png',
     tagline: 'Gaeilge with confidence',
     level: 'Junior & Leaving Cert',
     rating: 'H1–H3 support',
@@ -72,22 +72,22 @@ export type Teacher = {
 export const teachers: Teacher[] = [
   {
     name: 'Febi Varghese',
-    subject: 'Maths',
-    image: '/teachers/teacher-1.png',
+    subject: 'Maths & Science',
+    image: '/GREAT/teachers/teacher-1.png',
     bio: 'A warm, encouraging tutor who breaks Maths into clear steps and helps students enjoy the satisfaction of getting it right.',
     years: 'Tutor',
   },
   {
     name: 'Garima Gupta',
     subject: 'English & Science',
-    image: '/teachers/teacher-2.png',
+    image: '/GREAT/teachers/teacher-2.png',
     bio: 'A supportive tutor who brings energy to lessons and helps students turn questions into confident answers.',
     years: 'Tutor',
   },
   {
     name: 'Patrick',
-    subject: 'Irish',
-    image: '/teachers/teacher-3.png',
+    subject: 'English & Irish',
+    image: '/GREAT/teachers/teacher-3.png',
     bio: 'A friendly tutor focused on building confidence, conversation skills and a positive attitude to learning Irish.',
     years: 'Tutor',
   },
