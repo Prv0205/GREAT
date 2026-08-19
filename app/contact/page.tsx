@@ -15,15 +15,15 @@ export const metadata: Metadata = {
 const contacts = [
   {
     name: 'Febi Varghese',
-    phone: '+353 XX XXX XXXX',
+    phone: '+353 89 275 5350',
   },
   {
     name: 'Garima Gupta',
-    phone: '+353 XX XXX XXXX',
+    phone: '+353 87 270 9930',
   },
   {
     name: 'Patrick',
-    phone: '+353 XX XXX XXXX',
+    phone: '+353 87 287 3200',
   },
 ]
 
@@ -128,7 +128,7 @@ export default function ContactPage() {
             </p>
 
             <a
-              href="mailto:hello@great-galway.ie"
+              href="mailto:greattuitioncentre@gmail.com"
               className="mt-6 block break-all font-semibold text-[#169B62] hover:text-[#FF883E]"
             >
               hello@great-galway.ie
