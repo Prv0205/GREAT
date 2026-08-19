@@ -131,7 +131,7 @@ export default function ContactPage() {
               href="mailto:greattuitioncentre@gmail.com"
               className="mt-6 block break-all font-semibold text-[#169B62] hover:text-[#FF883E]"
             >
-              hello@great-galway.ie
+              greattuitioncentre@gmail.com
             </a>
 
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -180,7 +180,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* =====================================================
+      /* {/* =====================================================
           VISIT US
           ===================================================== */}
 
@@ -285,7 +285,7 @@ export default function ContactPage() {
 
           </div>
         </div>
-      </section>
+      </section> */
 
       {/* =====================================================
           QUICK RESPONSE
