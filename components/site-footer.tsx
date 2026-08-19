@@ -85,14 +85,14 @@ export function SiteFooter() {
             <div className="mt-6 space-y-3">
 
               <a
-                href="mailto:hello@great-galway.ie"
+                href="mailto:greattuitioncentre@gmail.com"
                 className="flex items-center gap-3 text-sm text-white/75 transition-colors hover:text-[#FF883E]"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#169B62]">
                   <Mail className="h-4 w-4 text-white" />
                 </span>
 
-                hello@great-galway.ie
+                greattuitioncentre@gmail.com
               </a>
 
               <a
