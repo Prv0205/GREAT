@@ -1,24 +1,45 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import {
+  Clock3,
+  ExternalLink,
   Mail,
   MapPin,
   Phone,
-  Clock3,
 } from 'lucide-react'
 
 import { navLinks, subjects } from '@/lib/site-data'
 
+const classLocations = [
+  {
+    day: 'Tuesday Classes',
+    location: 'YOUR TUESDAY LOCATION',
+    address: 'Galway City, Galway',
+    eircode: 'YOUR EIRCODE',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Galway+Ireland',
+  },
+  {
+    day: 'Saturday Classes',
+    location: 'YOUR SATURDAY LOCATION',
+    address: 'Galway City, Galway',
+    eircode: 'YOUR EIRCODE',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Galway+Ireland',
+  },
+]
+
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden border-t border-[#D7E9DF] bg-[#F8FCFA]">
+    <footer className="relative overflow-hidden bg-[#123B2B] text-white">
 
       {/* =====================================================
           IRISH TRICOLOUR
+          Correct Irish order: GREEN → WHITE → ORANGE
           ===================================================== */}
 
       <div
-        className="absolute inset-x-0 top-0 flex h-1.5"
+        className="flex h-2 w-full"
         aria-hidden="true"
       >
         <div className="w-1/3 bg-[#169B62]" />
@@ -27,190 +48,251 @@ export function SiteFooter() {
       </div>
 
       {/* =====================================================
-          FOOTER CONTENT
+          MAIN FOOTER
           ===================================================== */}
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
 
-        {/* =================================================
-            BRAND
-            ================================================= */}
+        <div className="grid gap-12 md:grid-cols-3">
 
-        <div className="md:col-span-1">
+          {/* =================================================
+              BRAND
+              ================================================= */}
 
-          <Link
-            href="/"
-            className="inline-flex items-center rounded-xl bg-white px-3 py-2 shadow-sm ring-1 ring-[#D7E9DF]"
-          >
-            <Image
-              src="/logo.png"
-              alt="GREAT Galway Regional Education and Tutorial Center"
-              width={150}
-              height={90}
-              className="h-[70px] w-auto object-contain"
-            />
-          </Link>
+          <div>
 
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            Friendly tuition in Galway for Maths, English, Science and Irish —
-            helping children build confidence and enjoy learning.
-          </p>
+            <Link
+              href="/"
+              className="inline-flex items-center rounded-xl bg-white px-3 py-2"
+            >
+              <Image
+                src="/logo.png"
+                alt="GREAT Galway Regional Education and Tutorial Center"
+                width={150}
+                height={90}
+                className="h-[68px] w-auto object-contain"
+              />
+            </Link>
 
-          {/* Irish colour accent */}
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
+              Friendly tuition in Galway for Maths, English, Science and
+              Irish — helping children build strong foundations, confidence
+              and a positive attitude to learning.
+            </p>
 
-          <div className="mt-5 flex h-1 w-24 overflow-hidden rounded-full">
-            <div className="w-1/3 bg-[#169B62]" />
-            <div className="w-1/3 bg-white" />
-            <div className="w-1/3 bg-[#FF883E]" />
+            {/* Contact information */}
+
+            <div className="mt-6 space-y-3">
+
+              <a
+                href="mailto:hello@great-galway.ie"
+                className="flex items-center gap-3 text-sm text-white/75 transition-colors hover:text-[#FF883E]"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#169B62]">
+                  <Mail className="h-4 w-4 text-white" />
+                </span>
+
+                hello@great-galway.ie
+              </a>
+
+              <a
+                href="/contact/"
+                className="flex items-center gap-3 text-sm text-white/75 transition-colors hover:text-[#FF883E]"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#169B62]">
+                  <Phone className="h-4 w-4 text-white" />
+                </span>
+
+                Contact our tutors
+              </a>
+
+            </div>
+
+          </div>
+
+          {/* =================================================
+              QUICK LINKS
+              ================================================= */}
+
+          <div>
+
+            <h3 className="font-display text-base font-bold text-white">
+              Quick Links
+            </h3>
+
+            <ul className="mt-5 flex flex-col gap-3">
+
+              {navLinks.map((link) => (
+                <li key={link.href}>
+
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/65 transition-colors hover:text-[#FF883E]"
+                  >
+                    {link.label}
+                  </Link>
+
+                </li>
+              ))}
+
+            </ul>
+
+          </div>
+
+          {/* =================================================
+              PROGRAMS
+              ================================================= */}
+
+          <div>
+
+            <h3 className="font-display text-base font-bold text-white">
+              Programs
+            </h3>
+
+            <ul className="mt-5 flex flex-col gap-3">
+
+              {subjects.map((subject) => (
+                <li key={subject.slug}>
+
+                  <Link
+                    href={`/courses/${subject.slug}/`}
+                    className="text-sm text-white/65 transition-colors hover:text-[#FF883E]"
+                  >
+                    {subject.title} Classes
+                  </Link>
+
+                </li>
+              ))}
+
+              <li>
+                <Link
+                  href="/courses/"
+                  className="text-sm text-white/65 transition-colors hover:text-[#FF883E]"
+                >
+                  Exam Preparation
+                </Link>
+              </li>
+
+            </ul>
+
           </div>
 
         </div>
 
-        {/* =================================================
-            EXPLORE
-            ================================================= */}
+        {/* =====================================================
+            DIVIDER
+            ===================================================== */}
 
-        <div>
+        <div className="my-12 h-px bg-white/10" />
 
-          <h3 className="font-display text-sm font-bold text-[#173B2B]">
-            Explore
-          </h3>
+        {/* =====================================================
+            CLASS LOCATIONS
+            ===================================================== */}
 
-          <ul className="mt-4 flex flex-col gap-2.5">
+        <section>
 
-            {navLinks.map((link) => (
-              <li key={link.href}>
+          <div className="text-center">
 
-                <Link
-                  href={link.href}
-                  className="text-sm text-muted-foreground transition-colors hover:text-[#169B62]"
-                >
-                  {link.label}
-                </Link>
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#FF883E]">
+              Find us
+            </span>
 
-              </li>
+            <h2 className="mt-2 font-display text-2xl font-extrabold text-white">
+              Class Locations
+            </h2>
+
+            <p className="mx-auto mt-2 max-w-xl text-sm text-white/60">
+              Join GREAT tuition sessions at our Galway class locations.
+            </p>
+
+          </div>
+
+          <div className="mx-auto mt-8 grid max-w-4xl gap-6 md:grid-cols-2">
+
+            {classLocations.map((location) => (
+              <div
+                key={location.day}
+                className="rounded-2xl border border-white/10 bg-[#1B4A38] p-6 shadow-lg"
+              >
+
+                {/* Class title */}
+
+                <div className="flex items-center gap-3">
+
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#169B62]">
+                    <Clock3 className="h-5 w-5 text-white" />
+                  </span>
+
+                  <h3 className="font-display text-lg font-bold text-[#FF883E]">
+                    {location.day}
+                  </h3>
+
+                </div>
+
+                {/* Location */}
+
+                <div className="mt-6 flex items-start gap-3">
+
+                  <MapPin className="mt-1 h-5 w-5 shrink-0 text-[#169B62]" />
+
+                  <div>
+
+                    <p className="font-semibold text-white">
+                      {location.location}
+                    </p>
+
+                    <p className="mt-1 text-sm leading-relaxed text-white/65">
+                      {location.address}
+                      <br />
+                      {location.eircode}
+                    </p>
+
+                  </div>
+
+                </div>
+
+                {/* Maps */}
+
+                <div className="mt-6 border-t border-white/10 pt-4">
+
+                  <a
+                    href={location.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#169B62] transition-colors hover:text-[#FF883E]"
+                  >
+                    <MapPin className="h-4 w-4" />
+                    View on Google Maps
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+
+                </div>
+
+              </div>
             ))}
 
-          </ul>
+          </div>
 
-        </div>
+        </section>
 
-        {/* =================================================
-            SUBJECTS
-            ================================================= */}
+        {/* =====================================================
+            CONTACT CTA
+            ===================================================== */}
 
-        <div>
+        <div className="mt-12 rounded-2xl border border-[#169B62]/30 bg-[#0E3024] p-7 text-center">
 
-          <h3 className="font-display text-sm font-bold text-[#173B2B]">
-            Subjects
+          <h3 className="font-display text-xl font-bold text-white">
+            Have a question about tuition?
           </h3>
 
-          <ul className="mt-4 flex flex-col gap-2.5">
-
-            {subjects.map((subject) => (
-              <li key={subject.slug}>
-
-                <Link
-                  href={`/courses/${subject.slug}`}
-                  className="text-sm text-muted-foreground transition-colors hover:text-[#169B62]"
-                >
-                  {subject.title}
-                </Link>
-
-              </li>
-            ))}
-
-          </ul>
-
-        </div>
-
-        {/* =================================================
-            CONTACT
-            ================================================= */}
-
-        <div>
-
-          <h3 className="font-display text-sm font-bold text-[#173B2B]">
-            Contact Us
-          </h3>
-
-          <ul className="mt-4 flex flex-col gap-4 text-sm text-muted-foreground">
-
-            {/* Address */}
-
-            <li className="flex items-start gap-3">
-
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E1F3EA]">
-                <MapPin className="h-4 w-4 text-[#169B62]" />
-              </span>
-
-              <span className="pt-1">
-                12 Eyre Square
-                <br />
-                Galway City
-                <br />
-                H91 GR8T
-              </span>
-
-            </li>
-
-            {/* Email */}
-
-            <li className="flex items-start gap-3">
-
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E1F3EA]">
-                <Mail className="h-4 w-4 text-[#169B62]" />
-              </span>
-
-              <a
-                href="mailto:hello@great-galway.ie"
-                className="pt-1 transition-colors hover:text-[#FF883E]"
-              >
-                hello@great-galway.ie
-              </a>
-
-            </li>
-
-            {/* Phone */}
-
-            <li className="flex items-start gap-3">
-
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E1F3EA]">
-                <Phone className="h-4 w-4 text-[#169B62]" />
-              </span>
-
-              <a
-                href="/contact"
-                className="pt-1 transition-colors hover:text-[#FF883E]"
-              >
-                Contact our tutors
-              </a>
-
-            </li>
-
-            {/* Opening hours */}
-
-            <li className="flex items-start gap-3">
-
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FFF1E8]">
-                <Clock3 className="h-4 w-4 text-[#FF883E]" />
-              </span>
-
-              <span className="pt-1">
-                Tuesday: 16:00 – 18:00
-                <br />
-                Saturday: 10:00 – 12:00
-              </span>
-
-            </li>
-
-          </ul>
-
-          {/* Contact button */}
+          <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-white/60">
+            Get in touch with our team and we&apos;ll help you find the
+            right subject, tutor and timetable for your child.
+          </p>
 
           <Link
-            href="/contact"
-            className="mt-5 inline-flex items-center rounded-lg bg-[#169B62] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#117C4E]"
+            href="/contact/"
+            className="mt-5 inline-flex items-center rounded-lg bg-[#169B62] px-6 py-3 text-sm font-bold text-white shadow-md transition-colors hover:bg-[#117C4E]"
           >
             Contact Us
           </Link>
@@ -220,20 +302,24 @@ export function SiteFooter() {
       </div>
 
       {/* =====================================================
-          BOTTOM
+          BOTTOM BAR
           ===================================================== */}
 
-      <div className="border-t border-[#D7E9DF] bg-white">
+      <div className="border-t border-white/10 bg-[#0E3024]">
 
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-muted-foreground sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-xs text-white/50 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
 
           <p>
             © {new Date().getFullYear()} GREAT — Galway Regional Education
             And Tutorial Centre. All rights reserved.
           </p>
 
-          <p className="font-medium text-[#169B62]">
-            Big learning. Bright futures. GREAT.
+          <p className="font-medium">
+            <span className="text-[#169B62]">Green</span>
+            {' · '}
+            <span className="text-white">White</span>
+            {' · '}
+            <span className="text-[#FF883E]">Orange</span>
           </p>
 
         </div>
