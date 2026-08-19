@@ -4,6 +4,7 @@ import { Play, Info, GraduationCap, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { TeacherCard } from '@/components/teacher-card'
 import { subjects, teachers } from '@/lib/site-data'
+import { Contact } from '@/components/contact'
 
 const approaches = [
   {
