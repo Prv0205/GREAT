@@ -49,7 +49,7 @@ export function SiteHeader() {
         >
           <div className="rounded-xl bg-white px-2 py-1 shadow-sm">
             <Image
-              src="/GREAT/logo.png"
+              src="/logo.png"
               alt="GREAT Galway Regional Education and Tutorial Center"
               width={170}
               height={105}
