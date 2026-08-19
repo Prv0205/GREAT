@@ -227,16 +227,6 @@ export function Contact() {
 
       </section>
 
-      {/* =====================================================
-          BOTTOM TRICOLOUR
-          ===================================================== */}
-
-      <div className="flex h-1.5 w-full">
-        <div className="w-1/3 bg-[#169B62]" />
-        <div className="w-1/3 bg-white" />
-        <div className="w-1/3 bg-[#FF883E]" />
-      </div>
-
     </section>
   )
 }
