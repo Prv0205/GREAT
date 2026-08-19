@@ -89,7 +89,7 @@ export function SiteHeader() {
         <div className="hidden md:block">
           <Button
             render={<Link href="/enroll" />}
-            className="bg-[#169B62] text-white shadow-md transition-colors hover:bg-[#117C4E]"
+            className="bg-[#169B62] text-white shadow-md hover:bg-[#117C4E]"
           >
             Register Interest
           </Button>
