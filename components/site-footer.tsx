@@ -13,19 +13,19 @@ import { navLinks, subjects } from '@/lib/site-data'
 const classLocations = [
   {
     day: 'Tuesday Classes',
-    location: 'YOUR TUESDAY LOCATION',
-    address: 'Galway City, Galway',
-    eircode: 'YOUR EIRCODE',
+    location: 'GAA Sports Club',
+    address: 'Salthill, Galway',
+    eircode: 'H91 T0F6',
     mapsUrl:
-      'https://www.google.com/maps/search/?api=1&query=Galway+Ireland',
+      'https://www.google.com/maps?q=GAA+Sports+Club+Salthill+Galway+H91+T0F6',
   },
   {
     day: 'Saturday Classes',
-    location: 'YOUR SATURDAY LOCATION',
-    address: 'Galway City, Galway',
-    eircode: 'YOUR EIRCODE',
+    location: 'Ballinfoyle Community Centre',
+    address: 'Headford Road, Galway',
+    eircode: 'H91 PN50',
     mapsUrl:
-      'https://www.google.com/maps/search/?api=1&query=Galway+Ireland',
+      'https://www.google.com/maps?q=Ballinfoyle+Community+Centre+Headford+Road+Galway+H91+PN50',
   },
 ]
 
@@ -66,7 +66,7 @@ export function SiteFooter() {
               className="inline-flex items-center rounded-xl bg-white px-3 py-2"
             >
               <Image
-                src="/logo.png"
+                src="GREAT/logo.png"
                 alt="GREAT Galway Regional Education and Tutorial Center"
                 width={150}
                 height={90}
@@ -314,13 +314,7 @@ export function SiteFooter() {
             And Tutorial Centre. All rights reserved.
           </p>
 
-          <p className="font-medium">
-            <span className="text-[#169B62]">Green</span>
-            {' · '}
-            <span className="text-white">White</span>
-            {' · '}
-            <span className="text-[#FF883E]">Orange</span>
-          </p>
+      
 
         </div>
 
