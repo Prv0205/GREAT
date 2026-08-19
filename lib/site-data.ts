@@ -54,7 +54,7 @@ export const subjects: Subject[] = [
     tagline: 'Discover how the world works',
     level: 'Junior & Leaving Cert',
     rating: 'H1–H3 support',
-    duration: '3 hrs / week',
+    duration: '2 hrs / week',
     topics: [
       'Physics',
       'Chemistry',
@@ -111,7 +111,7 @@ export const teachers: Teacher[] = [
   {
     name: 'Patrick',
     subject: 'English & Irish',
-    image: '/teachers/teacher-2.png',
+    image: '/teachers/teacher-4.png',
     bio: 'A friendly tutor focused on building confidence, conversation skills and a positive attitude to learning Irish.',
     years: 'Tutor',
   },
