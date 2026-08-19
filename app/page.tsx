@@ -65,7 +65,7 @@ export default function HomePage() {
           </h1>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg text-pretty">
-            Friendly tuition for Junior Infants through Leaving Cert. We help
+            Friendly tuition for Junior Infants to Leaving Cert. We help
             children build strong foundations, confidence and exam skills in
             Maths, English, Science and Irish.
           </p>
