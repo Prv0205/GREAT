@@ -121,5 +121,6 @@ export const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/courses', label: 'Subjects' },
   { href: '/about', label: 'Tutors' },
+  { href: '/contact', label: 'Contact' },
   { href: '/enroll', label: 'Enroll' },
 ]
