@@ -66,7 +66,7 @@ export function SiteFooter() {
               className="inline-flex items-center rounded-xl bg-white px-3 py-2"
             >
               <Image
-                src="/GREAT/logo.png"
+                src="/logo.png"
                 alt="GREAT Galway Regional Education and Tutorial Center"
                 width={150}
                 height={90}
