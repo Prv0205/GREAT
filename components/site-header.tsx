@@ -136,8 +136,8 @@ export function SiteHeader() {
                   className={cn(
                     'rounded-lg px-4 py-3 text-sm font-semibold transition-colors',
                     active
-                      ? 'bg-[#E8F5EF] text-[#169B62]'
-                      : 'text-muted-foreground hover:bg-secondary hover:text-[#169B62]',
+                      ? 'bg-[#E1F3EA] text-[#169B62]'
+                      : 'text-[#315A48] hover:bg-[#FFF1E8] hover:text-[#FF883E]',
                   )}
                 >
                   {link.label}
