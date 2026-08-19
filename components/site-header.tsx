@@ -15,7 +15,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[#D7E9DF] bg-[#F2FAF6]/95 shadow-sm backdrop-blur-xl">
 
       {/* Irish tricolour */}
       <div
@@ -42,10 +42,10 @@ export function SiteHeader() {
           <Image
             src="/GREAT/logo.jpg"
             alt="GREAT Galway Regional Education and Tutorial Center"
-            width={160}
-            height={100}
+            width={170}
+            height={105}
             priority
-            className="h-[82px] w-auto object-contain sm:h-[90px]"
+            className="h-[78px] w-auto object-contain sm:h-[84px]"
           />
         </Link>
 
