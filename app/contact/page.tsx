@@ -184,7 +184,7 @@ export default function ContactPage() {
           VISIT US
           ===================================================== */}
 
-      <section className="bg-[#F8FCFA]">
+      {/* <section className="bg-[#F8FCFA]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
 
           <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -239,23 +239,23 @@ export default function ContactPage() {
               </a>
 
             </div>
-
+ */}
             {/* MAP PLACEHOLDER */}
 
-            <div className="relative min-h-[340px] overflow-hidden rounded-2xl border border-[#D7E9DF] bg-[#E1F3EA] shadow-sm">
+            {/* <div className="relative min-h-[340px] overflow-hidden rounded-2xl border border-[#D7E9DF] bg-[#E1F3EA] shadow-sm"> */}
 
               {/* Decorative map lines */}
 
-              <div className="absolute inset-0 opacity-40">
+              {/* <div className="absolute inset-0 opacity-40">
                 <div className="absolute left-[5%] top-[25%] h-px w-[90%] rotate-12 bg-[#169B62]" />
                 <div className="absolute left-[5%] top-[65%] h-px w-[90%] -rotate-6 bg-[#169B62]" />
                 <div className="absolute left-[30%] top-[5%] h-[90%] w-px rotate-[20deg] bg-[#169B62]" />
                 <div className="absolute left-[70%] top-[5%] h-[90%] w-px -rotate-[15deg] bg-[#169B62]" />
-              </div>
+              </div> */}
 
               {/* Location */}
 
-              <div className="absolute inset-0 flex items-center justify-center">
+              {/* <div className="absolute inset-0 flex items-center justify-center">
 
                 <div className="text-center">
 
@@ -284,7 +284,7 @@ export default function ContactPage() {
             </div>
 
           </div>
-        </div>
+        </div> */}
       </section> */
 
       {/* =====================================================
