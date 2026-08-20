@@ -36,18 +36,18 @@ export default function HomePage() {
             className="object-cover object-center"
           />
          {/* GREAT logo watermark */}
-        <div
-          className="pointer-events-none absolute right-[-120px] top-1/2 z-[1] -translate-y-1/2 sm:right-[-100px] md:block"
-          aria-hidden="true"
-        >
-          <Image
-            src="/logo.png"
-            alt=""
-            width={650}
-            height={650}
-            className="h-[360px] w-[360px] object-contain opacity-[0.10] sm:h-[450px] sm:w-[450px] md:h-[560px] md:w-[560px] md:opacity-[0.18]"
-          />
-        </div>
+          <div
+            className="pointer-events-none absolute right-[-100px] top-1/2 z-[1] hidden -translate-y-1/2 sm:block md:right-[-80px]"
+            aria-hidden="true"
+          >
+            <Image
+              src="/logo.png"
+              alt=""
+              width={650}
+              height={650}
+              className="h-[450px] w-[450px] object-contain opacity-[0.10] md:h-[560px] md:w-[560px] md:opacity-[0.20]"
+            />
+          </div>
 
           {/* Green / white / orange Irish-inspired overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/25" />
