@@ -37,7 +37,7 @@ export default function HomePage() {
           />
          {/* GREAT logo watermark */}
         <div
-          className="pointer-events-none absolute right-[-120px] top-1/2 z-[1] -translate-y-1/2 sm:right-[-100px] md:right-[-80px]"
+          className="pointer-events-none absolute right-[-120px] top-1/2 z-[1] -translate-y-1/2 sm:right-[-100px] md:block"
           aria-hidden="true"
         >
           <Image
