@@ -118,8 +118,8 @@ export default function HomePage() {
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-            From Maths to Irish, our friendly tutors help children understand,
-            practise and enjoy every subject.
+            With expert support in Maths, English, Science and Irish, we help children learn with confidence, 
+            making every lesson engaging, enjoyable and meaningful.
           </p>
         </div>
 
