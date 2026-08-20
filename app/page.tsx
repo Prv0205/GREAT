@@ -35,6 +35,21 @@ export default function HomePage() {
             sizes="100vw"
             className="object-cover object-center"
           />
+          {/* =================================================
+            GREAT LOGO WATERMARK
+            ================================================= */}
+        <div
+          className="pointer-events-none absolute right-[-80px] top-1/2 z-[1] hidden -translate-y-1/2 md:block"
+          aria-hidden="true"
+        >
+          <Image
+            src="/logo.png"
+            alt=""
+            width={650}
+            height={650}
+            className="h-[560px] w-[560px] object-contain opacity-[0.12]"
+          />
+        </div>
 
           {/* Green / white / orange Irish-inspired overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/25" />
