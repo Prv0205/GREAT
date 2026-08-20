@@ -35,11 +35,9 @@ export default function HomePage() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          {/* =================================================
-            GREAT LOGO WATERMARK
-            ================================================= */}
+         {/* GREAT logo watermark */}
         <div
-          className="pointer-events-none absolute right-[-80px] top-1/2 z-[1] hidden -translate-y-1/2 md:block"
+          className="pointer-events-none absolute right-[-120px] top-1/2 z-[1] -translate-y-1/2 sm:right-[-100px] md:right-[-80px]"
           aria-hidden="true"
         >
           <Image
@@ -47,7 +45,7 @@ export default function HomePage() {
             alt=""
             width={650}
             height={650}
-            className="h-[560px] w-[560px] object-contain opacity-[0.12]"
+            className="h-[360px] w-[360px] object-contain opacity-[0.10] sm:h-[450px] sm:w-[450px] md:h-[560px] md:w-[560px] md:opacity-[0.18]"
           />
         </div>
 
