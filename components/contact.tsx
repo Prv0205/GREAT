@@ -16,7 +16,7 @@ const contacts = [
     phone: '+353 87 270 9930',
   },
   {
-    name: 'Patrick',
+    name: 'Patrick Murphy',
     phone: '+353 87 287 3200',
   },
 ]
@@ -166,7 +166,7 @@ export function Contact() {
                 </p>
 
                 <p className="mt-1 text-sm text-muted-foreground">
-                  10:00 – 12:00
+                  9:00 – 12:00
                 </p>
               </div>
 
