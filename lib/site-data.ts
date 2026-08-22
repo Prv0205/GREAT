@@ -109,7 +109,7 @@ export const teachers: Teacher[] = [
     years: 'Tutor',
   },
   {
-    name: 'Patrick',
+    name: 'Patrick Murphy',
     subject: 'English & Irish',
     image: '/teachers/teacher-4.png',
     bio: 'A friendly tutor focused on building confidence, conversation skills and a positive attitude to learning Irish.',
